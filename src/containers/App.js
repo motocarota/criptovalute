@@ -1,14 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import logo from './img/bitcoin.png'
-import './App.css';
-import Row from './components/Row'
-import LineChart from './components/LineChart'
+import logo from '../img/bitcoin.png'
+import '../App.css';
+import Row from '../components/Row'
+import LineChart from '../components/LineChart'
 
 
 const App = ({actions, currentTime}) => {
-  console.log(currentTime)
-
     return (
       <div className="App">
         <div className="App-header">
@@ -20,6 +18,9 @@ const App = ({actions, currentTime}) => {
             <Row name='BTCUSD' price='1' history={[1, 2, 3, 4]}  />
             <LineChart />
             <p>The current Time is : {currentTime.toString()}</p>
+            <button onClick={actions.currentTime.updateTime}>
+              Update
+            </button>               
           </div>  
         </div>
       </div>
@@ -28,7 +29,7 @@ const App = ({actions, currentTime}) => {
 
 const mapStateToProps = (state) =>{
   return{
-    currentTime: state.currentTime
+    currentTime: state.currentTime,
   }
 }
 

@@ -9,7 +9,6 @@ export const configureStore = () => {
             currentTime.actions,
             store.dispatch)
     }
-    console.log('return ', store)
     return {store, actions, currentTime}
 }
 
