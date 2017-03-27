@@ -4,10 +4,11 @@ import { createStore } from 'redux'
 import ReactDOM from 'react-dom';
 import AppContainer from './containers/AppContainer';
 import './index.css';
+import configureStore from './redux/configureStore'
+
+const {store, actions} = configureStore()
 
 ReactDOM.render(
-  <Provider store={createStore(AppContainer)}>
-    <AppContainer />
-  </Provider>  ,
+    <AppContainer store={store} actions={actions}/>,
   document.getElementById('root')
 );
