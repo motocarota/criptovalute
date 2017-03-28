@@ -2,47 +2,47 @@ import { VictoryAxis, VictoryLabel, VictoryLine } from 'victory'
 import React from 'react'
 
 class CustomTheme extends React.Component {
-  render() {
-    const styles = this.getStyles();
-    const dataSetOne = this.getDataSetOne();
-    const dataSetTwo = this.getDataSetTwo();
-    const tickValues = this.getTickValues();
+  render () {
+    const styles = this.getStyles()
+    const dataSetOne = this.getDataSetOne()
+    const dataSetTwo = this.getDataSetTwo()
+    const tickValues = this.getTickValues()
 
     return (
-      <svg style={styles.parent} viewBox="0 0 450 350">
+      <svg style={styles.parent} viewBox='0 0 450 350'>
 
         {/* Create stylistic elements */}
-        <rect x="0" y="0" width="10" height="30" fill="#f01615"/>
-        <rect x="420" y="10" width="20" height="20" fill="#458ca8"/>
+        <rect x='0' y='0' width='10' height='30' fill='#f01615' />
+        <rect x='420' y='10' width='20' height='20' fill='#458ca8' />
 
         {/* Define labels */}
         <VictoryLabel x={25} y={24} style={styles.title}
-          text="Some text"
+          text='Some text'
         />
         <VictoryLabel x={430} y={20} style={styles.labelNumber}
-          text="1"
+          text='1'
         />
         <VictoryLabel x={25} y={55} style={styles.labelOne}
-          text={"Economy \n % change on a year earlier"}
+          text={'Economy \n % change on a year earlier'}
         />
         <VictoryLabel x={425} y={55} style={styles.labelTwo}
-          text={"Dinosaur exports\n $bn"}
+          text={'Dinosaur exports\n $bn'}
         />
 
-        <g transform={"translate(0, 40)"}>
+        <g transform={'translate(0, 40)'}>
           {/* Add shared independent axis */}
           <VictoryAxis
-            scale="time"
+            scale='time'
             standalone={false}
             style={styles.axisYears}
             tickValues={tickValues}
             tickFormat={
               (x) => {
                 if (x.getFullYear() === 2000) {
-                  return x.getFullYear();
+                  return x.getFullYear()
                 }
                 if (x.getFullYear() % 5 === 0) {
-                  return x.getFullYear().toString().slice(2);
+                  return x.getFullYear().toString().slice(2)
                 }
               }
             }
@@ -55,7 +55,7 @@ class CustomTheme extends React.Component {
           <VictoryAxis dependentAxis
             domain={[-10, 15]}
             offsetX={50}
-            orientation="left"
+            orientation='left'
             standalone={false}
             style={styles.axisOne}
           />
@@ -70,7 +70,7 @@ class CustomTheme extends React.Component {
               x: [new Date(1999, 1, 1), new Date(2016, 1, 1)],
               y: [-10, 15]
             }}
-            scale={{x: "time", y: "linear"}}
+            scale={{x: 'time', y: 'linear'}}
             standalone={false}
             style={styles.lineThree}
           />
@@ -82,8 +82,8 @@ class CustomTheme extends React.Component {
               x: [new Date(1999, 1, 1), new Date(2016, 1, 1)],
               y: [-10, 15]
             }}
-            interpolation="monotoneX"
-            scale={{x: "time", y: "linear"}}
+            interpolation='monotoneX'
+            scale={{x: 'time', y: 'linear'}}
             standalone={false}
             style={styles.lineOne}
           />
@@ -94,7 +94,7 @@ class CustomTheme extends React.Component {
           */}
           <VictoryAxis dependentAxis
             domain={[0, 50]}
-            orientation="right"
+            orientation='right'
             standalone={false}
             style={styles.axisTwo}
           />
@@ -106,21 +106,21 @@ class CustomTheme extends React.Component {
               x: [new Date(1999, 1, 1), new Date(2016, 1, 1)],
               y: [0, 50]
             }}
-            interpolation="monotoneX"
-            scale={{x: "time", y: "linear"}}
+            interpolation='monotoneX'
+            scale={{x: 'time', y: 'linear'}}
             standalone={false}
             style={styles.lineTwo}
           />
         </g>
       </svg>
-    );
+    )
   }
 
-  getDataSetOne() {
+  getDataSetOne () {
     const seconds = new Date().getSeconds()
     const day = new Date().getDay()
     const month = new Date().getMonth()
-    const year = new Date().getFullYear()
+    // const year = new Date().getFullYear()
     const date = [ month, day, seconds ]
     return [
       {x: new Date(date), y: 12},
@@ -139,10 +139,10 @@ class CustomTheme extends React.Component {
       {x: new Date(2013, 1, 1), y: 1},
       {x: new Date(2014, 1, 1), y: 2},
       {x: new Date(2015, 1, 1), y: -5}
-    ];
+    ]
   }
 
-  getDataSetTwo() {
+  getDataSetTwo () {
     return [
       {x: new Date(2000, 1, 1), y: 5},
       {x: new Date(2003, 1, 1), y: 6},
@@ -155,10 +155,10 @@ class CustomTheme extends React.Component {
       {x: new Date(2011, 1, 1), y: 49},
       {x: new Date(2014, 1, 1), y: 40},
       {x: new Date(2015, 1, 1), y: 21}
-    ];
+    ]
   }
 
-  getTickValues() {
+  getTickValues () {
     return [
       new Date(1999, 1, 1),
       new Date(2000, 1, 1),
@@ -178,57 +178,58 @@ class CustomTheme extends React.Component {
       new Date(2014, 1, 1),
       new Date(2015, 1, 1),
       new Date(2016, 1, 1)
-    ];
+    ]
   }
 
-  getStyles() {
-    const BLUE_COLOR = "rgb(66, 125, 144)";
-    const GRAY_COLOR = "rgb(134, 135, 136)";    
-    const RED_COLOR = "rgb(240, 22, 21)";
-    const GREEN_COLOR = "#526c2e";
-    
+  getStyles () {
+    const BLUE_COLOR = 'rgb(66, 125, 144)'
+    const GRAY_COLOR = 'rgb(134, 135, 136)'
+    const RED_COLOR = 'rgb(240, 22, 21)'
+    const GREEN_COLOR = '#526c2e'
 
     return {
       parent: {
-        background: "rgb(27, 38, 45)",
-        boxSizing: "border-box",
-        display: "block",
+        background: 'rgb(27, 38, 45)',
+        boxSizing: 'border-box',
+        display: 'block',
         padding: 0,
         margin: 0,
         fontFamily: "'Fira Sans', sans-serif",
-        width: "100%",
+        width: '100%',
         maxHeight: '400px'
       },
       title: {
-        textAnchor: "start",
-        verticalAnchor: "end",
+        textAnchor: 'start',
+        verticalAnchor: 'end',
         fill: GRAY_COLOR,
-        fontFamily: "inherit",
-        fontSize: "18px",
-        fontWeight: "bold"
+        fontFamily: 'inherit',
+        fontSize: '18px',
+        fontWeight: 'bold'
       },
       labelNumber: {
-        textAnchor: "middle",
-        fill: "#ffffff",
-        fontFamily: "inherit",
-        fontSize: "14px"
+        textAnchor: 'middle',
+        fill: '#ffffff',
+        fontFamily: 'inherit',
+        fontSize: '14px'
       },
 
       // INDEPENDENT AXIS
       axisYears: {
-        axis: { stroke: GRAY_COLOR, strokeWidth: 1},
+        axis: {
+          stroke: GRAY_COLOR, strokeWidth: 1
+        },
         ticks: {
           size: (tick) => {
             const tickSize =
-              tick.getFullYear() % 5 === 0 ? 10 : 5;
-            return tickSize;
+              tick.getFullYear() % 5 === 0 ? 10 : 5
+            return tickSize
           },
           stroke: GRAY_COLOR,
           strokeWidth: 1
         },
         tickLabels: {
           fill: GRAY_COLOR,
-          fontFamily: "inherit",
+          fontFamily: 'inherit',
           fontSize: 16
         }
       },
@@ -237,29 +238,29 @@ class CustomTheme extends React.Component {
       axisOne: {
         grid: {
           stroke: (tick) =>
-            tick === -10 ? "transparent" : "rgb(40, 52, 60)",
+            tick === -10 ? 'transparent' : 'rgb(40, 52, 60)',
           strokeWidth: 2
         },
         axis: { stroke: GRAY_COLOR, strokeWidth: 0 },
         ticks: { strokeWidth: 0 },
         tickLabels: {
           fill: GRAY_COLOR,
-          fontFamily: "inherit",
+          fontFamily: 'inherit',
           fontSize: 16
         }
       },
       labelOne: {
         fill: GRAY_COLOR,
-        fontFamily: "inherit",
+        fontFamily: 'inherit',
         fontSize: 12,
-        fontStyle: "italic"
+        fontStyle: 'italic'
       },
       lineOne: {
         data: { stroke: BLUE_COLOR, strokeWidth: 3 }
       },
       axisOneCustomLabel: {
         fill: BLUE_COLOR,
-        fontFamily: "inherit",
+        fontFamily: 'inherit',
         fontWeight: 300,
         fontSize: 21
       },
@@ -269,16 +270,16 @@ class CustomTheme extends React.Component {
         axis: { stroke: RED_COLOR, strokeWidth: 0 },
         tickLabels: {
           fill: GRAY_COLOR,
-          fontFamily: "inherit",
+          fontFamily: 'inherit',
           fontSize: 16
         }
       },
       labelTwo: {
-        textAnchor: "end",
+        textAnchor: 'end',
         fill: GRAY_COLOR,
-        fontFamily: "inherit",
+        fontFamily: 'inherit',
         fontSize: 12,
-        fontStyle: "italic"
+        fontStyle: 'italic'
       },
       lineTwo: {
         data: { stroke: RED_COLOR, strokeWidth: 2.5 }
@@ -288,7 +289,7 @@ class CustomTheme extends React.Component {
       lineThree: {
         data: { stroke: GREEN_COLOR, strokeWidth: 2 }
       }
-    };
+    }
   }
 }
 
