@@ -4,12 +4,7 @@ import logo from '../img/bitcoin.png'
 import '../App.css'
 import Row from '../components/Row'
 
-const App = ({actions, currentTime}) => {
-  const data = [
-    {month: 'September', profit: 35000, loss: 2000},
-    {month: 'October', profit: 42000, loss: 8000},
-    {month: 'November', profit: 55000, loss: 5000}
-  ]
+const App = ({actions, state}) => {
   return (
     <div className='App'>
       <div className='App-header'>
@@ -18,21 +13,21 @@ const App = ({actions, currentTime}) => {
       </div>
       <div className='Rows'>
         <div className='Row'>
-          <Row name='BTCUSD' price='1' history={data} />
+          {state.data.map(el => (
+            <Row key={el} name={el.name} price={el.price} history={el.history} />
+            )
+           )
+          }
         </div>
-        <p>The current Time is : {currentTime.toString()}</p>
-        <button onClick={actions.currentTime.updateTime}>
-         Update
-        </button>
+        <p>The current Time is : {state.currentTime.toString()}</p>
+        <button onClick={actions.currentTime.updateTime}>Update </button>
       </div>
     </div>
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    currentTime: state.currentTime
-  }
+function mapStateToProps (state) {
+  return { state }
 }
 
 export default connect(
