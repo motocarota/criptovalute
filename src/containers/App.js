@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import logo from '../img/bitcoin.png'
 import '../App.css'
 import Row from '../components/Row'
-import Api from '../components/Api'
 
 const App = ({actions, state}) => {
   return (
@@ -22,8 +21,6 @@ const App = ({actions, state}) => {
         </div>
         <p>The current Time is : {state.currentTime.toString()}</p>
         <button onClick={actions.currentTime.updateTime}>Update </button>
-        <p>The current API call response is : <p id='20' /> {Api}</p>
-        <button onClick={Api}> Get Api </button>
       </div>
     </div>
   )

@@ -2,12 +2,12 @@ export const types = {
   'FETCH_NEW_TIME': 'FETCH_NEW_TIME'
 }
 
-const initialState = Date.now()
+const initialState = new Date()
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case types.FETCH_NEW_TIME:
-      return Date.now()
+      return new Date()
     default:
       return state
   }
