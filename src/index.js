@@ -4,9 +4,9 @@ import Root from './containers/Root'
 import './index.css'
 import configureStore from './redux/configureStore'
 
-const { store, actions } = configureStore()
+const { store } = configureStore()
 
 ReactDOM.render(
-  <Root store={store} actions={actions} />,
+  <Root store={store} />,
   document.getElementById('root')
 )
