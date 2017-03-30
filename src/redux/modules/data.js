@@ -1,5 +1,7 @@
+// import Api from '../../components/Api'
 // i differenti tipi di azione che lo store supporta
 export const types = {
+  'NEW_DATA_REQUESTED': 'NEW_DATA_REQUESTED',
   'NEW_DATA': 'NEW_DATA'
 }
 
@@ -7,16 +9,20 @@ export const types = {
 const initialState = [{
   name: 'store vuoto',
   price: null,
-  histoy: null
+  history: []
 }]
 
 // le uniche azioni che possono cambiare il contenuto dello store
+
 export const actions = {
   newData: (questi) => ({
     type: types.NEW_DATA,
     payload: {
       received: questi
     }
+  }),
+  fetchData: () => ({
+    type: types.NEW_DATA_REQUESTED
   })
 }
 
