@@ -1,5 +1,5 @@
 export const types = {
-  'FETCH_NEW_TIME': 'FETCH_NEW_TIME'
+  FETCH_NEW_TIME: 'FETCH_NEW_TIME'
 }
 
 const initialState = new Date()
