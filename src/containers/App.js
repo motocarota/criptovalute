@@ -12,7 +12,10 @@ const App = ({ data, time, updateTime, fetch }) => {
       <div className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />
         <h2>Andamento Criptovalute</h2>
-      <p>The current API call response is : <button onClick={fetch}> Get Api </button></p>
+      <p>
+        <button onClick={() => fetch('tDASHUSD')}> Get DASH </button>
+        <button onClick={() => fetch('tBTCUSD')}> Get BTC </button>
+      </p>
       </div>
       <div className='Rows'>
         <div className='Row'>
@@ -39,7 +42,7 @@ function mapStateToProps (state) {
 function mapDispatchToProps (dispatch) {
   return {
     updateTime: () => dispatch(currentTimeActions.actions.updateTime()),
-    fetch: () => dispatch(dataActions.actions.fetchData())
+    fetch: (symbol) => dispatch(dataActions.actions.fetchData(symbol))
   }
 }
 export default connect(
