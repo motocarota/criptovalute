@@ -27,10 +27,14 @@ export const actions = {
 }
 
 // come le azioni ricevute generano un nuovo stato
-export const reducer = (state = initialState, action) => {
-  switch (action.type) {
+export const reducer = (state = initialState, action = {}) => {
+  const { type, payload = {} } = action
+  switch (type) {
     case types.NEW_DATA:
-      return action.payload.received
+      return { 
+        ...state,
+       [payload.symbol]: payload.received
+      }
     default:
       return state
   }
