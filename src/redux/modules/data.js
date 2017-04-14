@@ -22,8 +22,11 @@ export const actions = {
       symbol
     }
   }),
-  fetchData: () => ({
-    type: types.NEW_DATA_REQUESTED
+  fetchData: (symbol) => ({
+    type: types.NEW_DATA_REQUESTED,
+    payload: {
+      symbol
+    }
   })
 }
 
