@@ -20,7 +20,4 @@ function* saga() {
   yield takeLatest(types.NEW_DATA_REQUESTED, fetchUser)
 }
 
-
-// const list = []
-
 export default saga
