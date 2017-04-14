@@ -15,10 +15,11 @@ const initialState = [{
 // le uniche azioni che possono cambiare il contenuto dello store
 
 export const actions = {
-  newData: (questi) => ({
+  newData: (symbol, received) => ({
     type: types.NEW_DATA,
     payload: {
-      received: questi
+      received,
+      symbol
     }
   }),
   fetchData: () => ({
