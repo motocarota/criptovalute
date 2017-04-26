@@ -1,8 +1,14 @@
-import { createStore, bindActionCreators, combineReducers, applyMiddleware, compose } from 'redux'
+import {
+  createStore,
+  bindActionCreators,
+  combineReducers,
+  applyMiddleware,
+  compose
+} from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import * as currentTime from './modules/currentTime'
 import * as data from './modules/data'
-import saga from './saga'
+import sagas from './saga'
 
 const sagaMiddleware = createSagaMiddleware()
 
@@ -11,17 +17,17 @@ export const configureStore = () => {
     data: data.reducer,
     currentTime: currentTime.reducer
   })
-const finalCreateStore = compose(
-  applyMiddleware(sagaMiddleware)
-)(createStore)
+  const finalCreateStore = compose(applyMiddleware(sagaMiddleware))(createStore)
 
-  const store = finalCreateStore(mainReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-)
+  const store = finalCreateStore(
+    mainReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
 
   // DEBUG ONLY
   window.REDUX = store
 
-  sagaMiddleware.run(saga)
+  sagaMiddleware.run(sagas.listenSaga)
 
   const actions = {
     currentTime: bindActionCreators(currentTime.actions, store.dispatch),
