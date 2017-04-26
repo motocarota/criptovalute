@@ -1,0 +1,4 @@
+[0414/173438.434:ERROR:process_reader_win.cc(142)] SuspendThread: Accesso negato. (0x5)
+[0414/173438.440:ERROR:process_info.cc(625)] range at 0x25424f1c00000000, size 0x2a6 fully unreadable
+[0414/173438.441:ERROR:process_info.cc(625)] range at 0x25424f8000000000, size 0x2a6 fully unreadable
+[0414/173438.441:ERROR:process_info.cc(625)] range at 0x0, size 0x2a6 fully unreadable
