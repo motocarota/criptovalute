@@ -11,7 +11,7 @@ class App extends React.Component {
   componentDidMount () {
     console.log('get all the stuff...')
     const { fetch } = this.props
-    const list = ['tLTCUSD', 'tETHUSD']
+    const list = ['tETHUSD', 'tLTCUSD']
     list.map(s => fetch(s))
   }
   render () {
