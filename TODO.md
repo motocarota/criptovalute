@@ -11,3 +11,6 @@ ok - aggiustare react in modo da gestirsi il nuovo formato dello stato
 ok- gestione degli errori: metti un nome di valuta sbagliato 'tHAHAHOHO' e fai in modo di gestire l'errore dall'interfaccia
 - gestione della lista delle valute preferite
     da qualche parte, in qualche modo devi poter cambiare il contenuto dell'array
+
+
+    
