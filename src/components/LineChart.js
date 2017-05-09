@@ -10,7 +10,7 @@ const LineChart = ({ history }) => {
   return (
     <div viewBox='0, 0, width, height' width='100%' height='400px'>
       <VictoryChart
-     //   domainPadding={20}
+        domainPadding={{y: [20, 0]}}
         scale='time'
         theme={VictoryTheme.material}
       >
