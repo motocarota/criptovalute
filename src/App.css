@@ -22,7 +22,7 @@ html {
 .App h1{
     text-align: center;
     font-size: 30px;
-    color: #505050;
+    color: #fff;
     margin-top: 30px;
     margin-bottom: -30px;
     font-weight: normal;
@@ -34,8 +34,8 @@ html {
 
 .App .Rows{
   margin: 130px;
-  background-color: #ffffff;
-  color: #00090F;
+  background-color: #3a3a3a;
+  color: #fff;
   font-weight: normal;
 }
 
