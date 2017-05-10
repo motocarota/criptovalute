@@ -11,7 +11,7 @@ class App extends React.Component {
   componentDidMount () {
     console.log('get all the stuff...')
     const { fetch } = this.props
-    const list = ['tETHUSD', 'tLTCUSD']
+    const list = ['tETHUSD', 'tLTCUSD', 'tBTCUSD']
     list.map(s => fetch(s))
   }
   render () {
@@ -22,7 +22,8 @@ class App extends React.Component {
       <div className='App'>
         <div className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
-          <h2>Cryptocurrencies
+          <h2>
+            Cryptocurrencies
           </h2>
           <p>
             <button onClick={() => fetch('tAHAHAH')}> Get err </button>
