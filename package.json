@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.16.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "redux-saga": "^0.14.4"
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "redux-saga": "^0.14.4",
+    "victory": "^0.19.0"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"
