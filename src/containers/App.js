@@ -22,7 +22,7 @@ class App extends React.Component {
       <div className='App'>
         <div className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
-          <h2>Crypto currencies
+          <h2>Cryptocurrencies
           </h2>
           <p>
             <button onClick={() => fetch('tAHAHAH')}> Get err </button>
@@ -34,10 +34,8 @@ class App extends React.Component {
         <div className='Rows'>
           <div className='Row'>
             {ccy.length
-              ? ccy.map(key => (
-                <Row key={key} symbol={key} history={data[key]} />
-                ))
-              : <span>nothing to show</span>}
+              ? <Row key={ccy} symbol={ccy} history={data[ccy]} />
+              : <span>Nothing to show</span>}
           </div>
           <p>The current Time is : {time.toString()}</p>
           <button onClick={updateTime}>Update </button>

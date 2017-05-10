@@ -32,7 +32,6 @@ export const reducer = (state = initialState, action = {}) => {
   switch (type) {
     case types.NEW_DATA:
       return {
-        ...state,
         [payload.symbol]: payload.received
       }
 
