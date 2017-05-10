@@ -6,7 +6,7 @@ const LineChart = ({ history }) => {
     .map(row => [row[0], row[1], row[2]]) // return only the first two elements
     .reverse() // order from older to newer
 
-  console.log('convert:', convert, 'history: ', history)
+  // console.log('convert:', convert, 'history: ', history)
   return (
     <div>
       <VictoryChart
