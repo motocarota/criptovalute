@@ -8,9 +8,9 @@ const LineChart = ({ history }) => {
 
   console.log('convert:', convert, 'history: ', history)
   return (
-    <div viewBox='0, 0, width, height' width='100%' height='400px'>
+    <div>
       <VictoryChart
-        domainPadding={{y: [20, 0]}}
+        domainPadding={{ y: [20, 0] }}
         scale='time'
         theme={VictoryTheme.material}
       >
