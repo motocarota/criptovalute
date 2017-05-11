@@ -6,8 +6,15 @@ import Row from '../components/Row'
 import * as currentTimeActions from '../redux/modules/currentTime'
 import * as dataActions from '../redux/modules/data'
 // app : {}
-import { Tabs } from 'antd'
+import Button from 'antd/lib/button'
+import Tabs from 'antd/lib/tabs'
+
 const TabPane = Tabs.TabPane
+const ButtonGroup = Button.Group
+
+function callback (key) {
+  console.log('show tab n.', key)
+}
 
 class App extends React.Component {
   componentDidMount () {
@@ -17,30 +24,31 @@ class App extends React.Component {
     list.map(s => fetch(s))
   }
   render () {
-    function callback (key) {
-      console.log(key)
-    }
     const { data, time, updateTime, fetch } = this.props
     const ccy = Object.keys(data)
     console.log(ccy)
     return (
       <div className='App'>
-        <Tabs defaultActiveKey='1' onChange={callback}>
-          <TabPane tab='Tab 1' key='1'>Content of Tab Pane 1</TabPane>
-          <TabPane tab='Tab 2' key='2'>Content of Tab Pane 2</TabPane>
-          <TabPane tab='Tab 3' key='3'>Content of Tab Pane 3</TabPane>
-        </Tabs>
         <div className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
           <h2>
             Cryptocurrencies
           </h2>
-          <p>
-            <button onClick={() => fetch('tAHAHAH')}> Get err </button>
-            <button onClick={() => fetch('tLTCUSD')}> Get LTC </button>
-            <button onClick={() => fetch('tETCUSD')}> Get ETC </button>
-            <button onClick={() => fetch('tBTCUSD')}> Get BTC </button>
-          </p>
+          <ButtonGroup>
+            <Button onClick={() => fetch('tAHAHAH')}> Get err </Button>
+            <Button onClick={() => fetch('tLTCUSD')}> Get LTC </Button>
+            <Button onClick={() => fetch('tETCUSD')}> Get ETC </Button>
+            <Button onClick={() => fetch('tBTCUSD')}> Get BTC </Button>
+          </ButtonGroup>
+          <div>
+            <Tabs defaultActiveKey='1' onChange={callback}>
+              <TabPane tab='Tab 1' key='1'>Content of Tab Pane 1</TabPane>
+              <TabPane tab='Tab 2' key='2'>Content of Tab Pane 2</TabPane>
+              <TabPane tab='Tab 3' key='3'>Content of Tab Pane 3</TabPane>
+            </Tabs>
+            <h1>DP</h1>
+            <Button type='primary'>Button</Button>
+          </div>
         </div>
         <div className='Rows'>
           <div className='Row'>

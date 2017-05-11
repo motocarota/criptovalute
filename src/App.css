@@ -1,30 +1,26 @@
-html {
-    background-color: #222;
-}
+@import '~antd/dist/antd.css';
+
+/* NOTE better sticking to light theme, we can override base ant theme later */
 
 .App {
   text-align: center;
   font-family: 'Questrial','Helvetica Neue',Arial,sans-serif;
-  background-color: #222;
 }
 
 .App-logo {
-  /*animation: App-logo-spin infinite 20s linear;*/
   height: 80px;
 }
 
 .App-header {
   height: 150px;
   padding: 20px;
-  color: #ffffff;
 }
 
 .App h1{
     text-align: center;
     font-size: 30px;
-    color: #fff;
     margin-top: 30px;
-    margin-bottom: -30px;
+    /*margin-bottom: -30px; NOTE try to avoid negative margin and paddings */
     font-weight: normal;
 }
 
@@ -34,8 +30,6 @@ html {
 
 .App .Rows{
   margin: 130px;
-  background-color: #3a3a3a;
-  color: #fff;
   font-weight: normal;
 }
 
