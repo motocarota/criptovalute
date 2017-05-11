@@ -8,6 +8,7 @@ import * as dataActions from '../redux/modules/data'
 // app : {}
 import Button from 'antd/lib/button'
 import Tabs from 'antd/lib/tabs'
+import Card from 'antd/lib/card'
 
 const TabPane = Tabs.TabPane
 const ButtonGroup = Button.Group
@@ -34,31 +35,34 @@ class App extends React.Component {
           <h2>
             Cryptocurrencies
           </h2>
-          <ButtonGroup>
-            <Button onClick={() => fetch('tAHAHAH')}> Get err </Button>
-            <Button onClick={() => fetch('tLTCUSD')}> Get LTC </Button>
-            <Button onClick={() => fetch('tETCUSD')}> Get ETC </Button>
-            <Button onClick={() => fetch('tBTCUSD')}> Get BTC </Button>
-          </ButtonGroup>
-          <div>
-            <Tabs defaultActiveKey='1' onChange={callback}>
-              <TabPane tab='Tab 1' key='1'>Content of Tab Pane 1</TabPane>
-              <TabPane tab='Tab 2' key='2'>Content of Tab Pane 2</TabPane>
-              <TabPane tab='Tab 3' key='3'>Content of Tab Pane 3</TabPane>
-            </Tabs>
-            <h1>DP</h1>
-            <Button type='primary'>Button</Button>
-          </div>
         </div>
-        <div className='Rows'>
-          <div className='Row'>
-            {ccy.length
-              ? <Row key={ccy} symbol={ccy} history={data[ccy]} />
-              : <span>Nothing to show</span>}
-          </div>
-          <p>The current Time is : {time.toString()}</p>
-          <button onClick={updateTime}>Update </button>
-        </div>
+        <Card style={{ width: '80%', margin: '0 auto' }}>
+          <Tabs defaultActiveKey='1' onChange={callback}>
+            <TabPane tab='Price Graph' key='1' type='card'>
+              <div className='Rows'>
+                <div className='Row'>
+                  {ccy.length
+                    ? <Row key={ccy} symbol={ccy} history={data[ccy]} />
+                    : <span>Nothing to show</span>}
+                </div>
+                <p>The current Time is : {time.toString()}</p>
+                <button onClick={updateTime}>Update </button>
+              </div>
+            </TabPane>
+            <TabPane tab='Options' key='2'>
+              Pick up your currency
+              <ButtonGroup>
+                <Button onClick={() => fetch('tAHAHAH')}> Get err </Button>
+                <Button onClick={() => fetch('tLTCUSD')}> Get LTC </Button>
+                <Button onClick={() => fetch('tETCUSD')}> Get ETC </Button>
+                <Button onClick={() => fetch('tBTCUSD')}> Get BTC </Button>
+              </ButtonGroup>
+            </TabPane>
+            <TabPane tab='About' key='3'>
+              Blah blah blah
+            </TabPane>
+          </Tabs>
+        </Card>
       </div>
     )
   }

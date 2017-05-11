@@ -2,6 +2,11 @@
 
 /* NOTE better sticking to light theme, we can override base ant theme later */
 
+html, body {
+  background: #eee;
+  height: 100%;
+}
+
 .App {
   text-align: center;
   font-family: 'Questrial','Helvetica Neue',Arial,sans-serif;
@@ -29,7 +34,6 @@
 }
 
 .App .Rows{
-  margin: 130px;
   font-weight: normal;
 }
 
