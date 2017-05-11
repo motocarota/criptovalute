@@ -6,7 +6,12 @@ export const types = {
 }
 
 // stato iniziale dello store
-const initialState = {}
+const initialState = {
+  currentCcy: 'tBTCUSD',
+  data: {
+    tBTCUSD: []
+  }
+}
 
 // le uniche azioni che possono cambiare il contenuto dello store
 
@@ -32,7 +37,14 @@ export const reducer = (state = initialState, action = {}) => {
   switch (type) {
     case types.NEW_DATA:
       return {
-        [payload.symbol]: payload.received
+        currentCcy: payload.symbol,
+        data: Object.assign(
+          {},
+          state.data || {},
+          {
+            [payload.symbol]: payload.received
+          }
+        )
       }
 
     default:
