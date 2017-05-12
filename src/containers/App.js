@@ -21,8 +21,9 @@ class App extends React.Component {
 
   render () {
     const { ccy, data = { data: {} }, fetch } = this.props
-    function callback () {
-      fetch(`${ccy}`)
+    function callback (key) {
+      console.log(key)
+      fetch(`${key}`)
     }
     return (
       <div className='App'>
@@ -40,6 +41,12 @@ class App extends React.Component {
                   <PriceGraph ccy={ccy} history={data} />
                 </TabPane>
                 <TabPane tab='Etherium' key='tETHUSD' type='card'>
+                  <PriceGraph ccy={ccy} history={data} />
+                </TabPane>
+                <TabPane tab='Etherium Classic' key='tETCUSD' type='card'>
+                  <PriceGraph ccy={ccy} history={data} />
+                </TabPane>
+                <TabPane tab='Litecoin' key='tLTCUSD' type='card'>
                   <PriceGraph ccy={ccy} history={data} />
                 </TabPane>
               </Tabs>
