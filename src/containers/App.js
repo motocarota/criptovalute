@@ -21,6 +21,9 @@ class App extends React.Component {
 
   render () {
     const { ccy, data = { data: {} }, fetch } = this.props
+    function callback () {
+      fetch(`${ccy}`)
+    }
     return (
       <div className='App'>
         <div className='App-header'>
@@ -32,7 +35,14 @@ class App extends React.Component {
         <Card style={{ width: '80%', margin: '0 auto' }}>
           <Tabs defaultActiveKey='1'>
             <TabPane tab='Price Graph' key='1' type='card'>
-              <PriceGraph ccy={ccy} history={data} />
+              <Tabs defaultActiveKey='1' onChange={callback}>
+                <TabPane tab='Bitcoin' key='tBTCUSD' type='card'>
+                  <PriceGraph ccy={ccy} history={data} />
+                </TabPane>
+                <TabPane tab='Etherium' key='tETHUSD' type='card'>
+                  <PriceGraph ccy={ccy} history={data} />
+                </TabPane>
+              </Tabs>
             </TabPane>
             <TabPane tab='Options' key='2'>
               <Options fetch={fetch} />
