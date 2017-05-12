@@ -17,22 +17,22 @@ const LineChart = ({ history }) => {
         <VictoryAxis
           tickFormat={x => new Date(x).toLocaleDateString()}
           style={{
-            axis: { stroke: '#fff', opacity: 0.7 },
+            axis: { stroke: '#ccc', opacity: 0.7 },
             axisLabel: { fontSize: 16, padding: 20 },
             grid: { stroke: '#a0a0a0', opacity: 0.2 },
-            ticks: { stroke: '#fff', opacity: 0.7 },
-            tickLabels: { fontSize: 10, padding: 5, fill: '#fff' }
+            ticks: { stroke: '#ccc', opacity: 0.7 },
+            tickLabels: { fontSize: 10, padding: 5, fill: '#ccc' }
           }}
         />
         <VictoryAxis
           dependentAxis
           tickFormat={x => `$${x / 1}`}
           style={{
-            axis: { stroke: '#fff', opacity: 0.7 },
+            axis: { stroke: '#ccc', opacity: 0.7 },
             axisLabel: { fontSize: 16, padding: 20 },
             grid: { stroke: '#a0a0a0', opacity: 0.2 },
-            ticks: { stroke: '#fff', opacity: 0.7 },
-            tickLabels: { fontSize: 10, padding: 5, fill: '#fff' }
+            ticks: { stroke: '#ccc', opacity: 0.7 },
+            tickLabels: { fontSize: 10, padding: 5, fill: '#ccc' }
           }}
         />
         <VictoryLine
@@ -40,7 +40,7 @@ const LineChart = ({ history }) => {
           x={0}
           y={2}
           style={{
-            data: { stroke: '#fff' },
+            data: { stroke: '#108ee9' },
             labels: { fontSize: 12 },
             parent: { border: '1px solid #ccc' }
           }}
