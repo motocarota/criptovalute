@@ -40,10 +40,10 @@ class App extends React.Component {
                 <TabPane tab='Bitcoin' key='tBTCUSD' type='card'>
                   <PriceGraph ccy={ccy} history={data} />
                 </TabPane>
-                <TabPane tab='Etherium' key='tETHUSD' type='card'>
+                <TabPane tab='Ethereum' key='tETHUSD' type='card'>
                   <PriceGraph ccy={ccy} history={data} />
                 </TabPane>
-                <TabPane tab='Etherium Classic' key='tETCUSD' type='card'>
+                <TabPane tab='Ethereum Classic' key='tETCUSD' type='card'>
                   <PriceGraph ccy={ccy} history={data} />
                 </TabPane>
                 <TabPane tab='Litecoin' key='tLTCUSD' type='card'>
